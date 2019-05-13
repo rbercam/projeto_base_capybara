@@ -438,39 +438,37 @@ d,e);d={top:b.top-e.top+j,left:b.left-e.left+i};"using"in b?b.using.call(a,d):f.
 f.top,left:d.left-f.left}},offsetParent:function(){return this.map(function(){for(var a=this.offsetParent||s.body;a&&!/^body|html$/i.test(a.nodeName)&&c.css(a,"position")==="static";)a=a.offsetParent;return a})}});c.each(["Left","Top"],function(a,b){var d="scroll"+b;c.fn[d]=function(f){var e=this[0],j;if(!e)return null;if(f!==w)return this.each(function(){if(j=wa(this))j.scrollTo(!a?f:c(j).scrollLeft(),a?f:c(j).scrollTop());else this[d]=f});else return(j=wa(e))?"pageXOffset"in j?j[a?"pageYOffset":
 "pageXOffset"]:c.support.boxModel&&j.document.documentElement[d]||j.document.body[d]:e[d]}});c.each(["Height","Width"],function(a,b){var d=b.toLowerCase();c.fn["inner"+b]=function(){return this[0]?c.css(this[0],d,false,"padding"):null};c.fn["outer"+b]=function(f){return this[0]?c.css(this[0],d,false,f?"margin":"border"):null};c.fn[d]=function(f){var e=this[0];if(!e)return f==null?null:this;if(c.isFunction(f))return this.each(function(j){var i=c(this);i[d](f.call(this,j,i[d]()))});return"scrollTo"in
 e&&e.document?e.document.compatMode==="CSS1Compat"&&e.document.documentElement["client"+b]||e.document.body["client"+b]:e.nodeType===9?Math.max(e.documentElement["client"+b],e.body["scroll"+b],e.documentElement["scroll"+b],e.body["offset"+b],e.documentElement["offset"+b]):f===w?c.css(e,d):this.css(d,typeof f==="string"?f:f+"px")}});A.jQuery=A.$=c})(window);
-SCENARIOS = "h3[id^='scenario_'],h3[id^=background_]";
 
-$(document).ready(function() {
-  $(SCENARIOS).css('cursor', 'pointer');
-  $(SCENARIOS).click(function() {
-    $(this).siblings().toggle(250);
-  });
+  SCENARIOS = "h3[id^='scenario_'],h3[id^=background_]";
 
-  $("#collapser").css('cursor', 'pointer');
-  $("#collapser").click(function() {
-    $(SCENARIOS).siblings().hide();
-  });
+  $(document).ready(function() {
+    $(SCENARIOS).css('cursor', 'pointer');
+    $(SCENARIOS).click(function() {
+      $(this).siblings().toggle(250);
+    });
 
-  $("#expander").css('cursor', 'pointer');
-  $("#expander").click(function() {
-    $(SCENARIOS).siblings().show();
-  });
-})
+    $("#collapser").css('cursor', 'pointer');
+    $("#collapser").click(function() {
+      $(SCENARIOS).siblings().hide();
+    });
 
-function moveProgressBar(percentDone) {
-  $("cucumber-header").css('width', percentDone +"%");
-}
-function makeRed(element_id) {
-  $('#'+element_id).css('background', '#C40D0D');
-  $('#'+element_id).css('color', '#FFFFFF');
-}
-function makeYellow(element_id) {
-  $('#'+element_id).css('background', '#FAF834');
-  $('#'+element_id).css('color', '#000000');
-}</script></head><body><!-- Step count 0--><div class="cucumber"><div id="cucumber-header"><div id="label"><h1>Cucumber Features</h1></div><div id="summary"><p id="totals"></p><p id="duration"></p><div id="expand-collapse"><p id="expander">Expand All</p><p id="collapser">Collapse All</p></div></div></div><div class="feature"><pre class="comment"># language: pt<br/></pre><span class="tag">@hooks_pesquisa</span><h2><span class="val">Funcionalidade: Pesqusia teste para aprender capybara</span></h2><p class="narrative">Eu, como usuário aprendiz<br/>Desejo realizar pesquisa no google<br/>Para que eu possa aprender OO<br/></p><div class='scenario'><span class="scenario_file">features/specifications/pesquisa.feature:9</span><h3 id="scenario_1"><span class="keyword">Cenario:</span> <span class="val">Login com sucesso</span></h3><ol><li id='' class='step passed'><div class="step_name"><span class="keyword">Dado </span><span class="step val">que eu acesse a página do Google</span></div><div class="step_file"><span>features/step_definitions/pesquisa.rb:2</span></div></li> <script type="text/javascript">moveProgressBar('100.0');</script><script>makeRed('cucumber-header');makeRed('scenario_1');</script><li id='' class='step failed'><div class="step_name"><span class="keyword">Quando </span><span class="step val">eu informar capybara no campo de pesquia</span></div><div class="step_file"><span>features/step_definitions/pesquisa.rb:6</span></div><div class="message"><pre>Unable to find visible radio button " Two" that is not disabled within #&lt;Capybara::Node::Element tag="input" path="/html/body/div[6]/div[1]/div[1]/div[3]/div[1]/input[4]"&gt; (Capybara::ElementNotFound)</pre></div><div class="backtrace"><pre>./features/step_definitions/pesquisa.rb:8:in `/^eu informar capybara no campo de pesquia$/'
-features/specifications/pesquisa.feature:12:in `Quando eu informar capybara no campo de pesquia'</pre></div><pre class="ruby"><code><span class="linenum">6</span><span class="constant">Quando</span><span class="punct">(/</span><span class="regex">^eu informar capybara no campo de pesquia$</span><span class="punct">/)</span> <span class="keyword">do</span>
-<span class="linenum">7</span><span class="comment">#@Pesquisa.fieldPesquisa.set(@dadoPesquisar)</span>
-<span class="offending"><span class="linenum">8</span><span class="attribute">@Pesquisa</span><span class="punct">.</span><span class="ident">checkTwo</span><span class="punct">.</span><span class="ident">choose</span><span class="punct">(&quot;</span><span class="string"> Two</span><span class="punct">&quot;)</span></span>
-<span class="linenum">9</span><span class="ident">sleep</span> <span class="number">10</span>
-<span class="linenum">10</span><span class="keyword">end</span></code></pre></li> <script type="text/javascript">moveProgressBar('100.0');</script><li id='' class='step skipped'><div class="step_name"><span class="keyword">E </span><span class="step val">Clicar em pequisar</span></div><div class="step_file"><span>features/step_definitions/pesquisa.rb:12</span></div></li> <script type="text/javascript">moveProgressBar('100.0');</script><li id='' class='step skipped'><div class="step_name"><span class="keyword">Entao </span><span class="step val">o google reliza a pequisa com a mensagem: &quot;<span class="param">GitHub - teamcapybara/capybara: Acceptance test framework for web ...</span>&quot;</span></div><div class="step_file"><span>features/step_definitions/pesquisa.rb:17</span></div></li> <script type="text/javascript">moveProgressBar('100.0');</script><span class="embed"><a href="" onclick="img=document.getElementById('img_1'); img.style.display = (img.style.display == 'none' ? 'block' : 'none');return false">SCREENSHOT DO TESTE</a><br>&nbsp;
-          <img id="img_1" style="display: none" src="screenshots/test_failed/run_2018_09_21/login_com_sucesso.png"/></span></ol></div></div><script type="text/javascript">document.getElementById('duration').innerHTML = "Finished in <strong>1m15.601s seconds</strong>";</script><script type="text/javascript">document.getElementById('totals').innerHTML = "1 scenario (1 failed)<br />4 steps (1 failed, 2 skipped, 1 passed)";</script></div></body></html>
+    $("#expander").css('cursor', 'pointer');
+    $("#expander").click(function() {
+      $(SCENARIOS).siblings().show();
+    });
+  })
+
+  function moveProgressBar(percentDone) {
+    $("cucumber-header").css('width', percentDone +"%");
+  }
+  function makeRed(element_id) {
+    $('#'+element_id).css('background', '#C40D0D');
+    $('#'+element_id).css('color', '#FFFFFF');
+  }
+  function makeYellow(element_id) {
+    $('#'+element_id).css('background', '#FAF834');
+    $('#'+element_id).css('color', '#000000');
+  }
+
+</script></head><body><!-- Step count 0--><div class="cucumber"><div id="cucumber-header"><div id="label"><h1>Cucumber Features</h1></div><div id="summary"><p id="totals"></p><p id="duration"></p><div id="expand-collapse"><p id="expander">Expand All</p><p id="collapser">Collapse All</p></div></div></div><div class="feature"><pre class="comment"># language: pt<br/></pre><span class="tag">@hooks_pesquisa</span><h2><span class="val">Funcionalidade: Pesqusia teste para aprender capybara</span></h2><p class="narrative">Eu, como usuário aprendiz<br/>Desejo realizar pesquisa no google<br/>Para que eu possa aprender OO<br/></p><div class='scenario'><span class="scenario_file">features/specifications/pesquisa.feature:9</span><h3 id="scenario_1"><span class="keyword">Cenario:</span> <span class="val">Login com sucesso</span></h3><ol><li id='' class='step passed'><div class="step_name"><span class="keyword">Dado </span><span class="step val">que eu acesse a página do Google</span></div><div class="step_file"><span>features/step_definitions/pesquisa.rb:2</span></div></li> <script type="text/javascript">moveProgressBar('100.0');</script><li id='' class='step passed'><div class="step_name"><span class="keyword">Quando </span><span class="step val">eu informar capybara no campo de pesquisa</span></div><div class="step_file"><span>features/step_definitions/pesquisa.rb:6</span></div></li> <script type="text/javascript">moveProgressBar('100.0');</script><li id='' class='step passed'><div class="step_name"><span class="keyword">E </span><span class="step val">Clicar em pequisar</span></div><div class="step_file"><span>features/step_definitions/pesquisa.rb:10</span></div></li> <script type="text/javascript">moveProgressBar('100.0');</script><li id='' class='step passed'><div class="step_name"><span class="keyword">Entao </span><span class="step val">o google reliza a pequisa com a mensagem: &quot;<span class="param">Capybara</span>&quot;</span></div><div class="step_file"><span>features/step_definitions/pesquisa.rb:15</span></div></li> <script type="text/javascript">moveProgressBar('100.0');</script><span class="embed"><a href="" onclick="img=document.getElementById('img_0'); img.style.display = (img.style.display == 'none' ? 'block' : 'none');return false">SCREENSHOT DO TESTE</a><br>&nbsp;
+          <img id="img_0" style="display: none" src="screenshots/test_passed/run_2019_05_13/login_com_sucesso.png"/></span></ol></div></div><script type="text/javascript">document.getElementById('duration').innerHTML = "Finished in <strong>0m4.764s seconds</strong>";</script><script type="text/javascript">document.getElementById('totals').innerHTML = "1 scenario (1 passed)<br />4 steps (4 passed)";</script></div></body></html>
